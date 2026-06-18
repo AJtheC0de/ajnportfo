@@ -1,15 +1,16 @@
-# Node modules
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+
+# Dependencies/build output if tooling is added later
 node_modules/
+dist/
+build/
 
 # Local environment files
 .env
 .env.*
-!.env.example
-
-# Generated Firebase config
-firebase-config.js
 
 # Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.log
