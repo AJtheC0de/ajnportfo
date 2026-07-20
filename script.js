@@ -6,6 +6,7 @@ const languageButtons = document.querySelectorAll("[data-lang]");
 const root = document.documentElement;
 const revealItems = document.querySelectorAll(".reveal");
 const nav = document.querySelector(".nav");
+const navLinks = [...nav.querySelectorAll('nav a[href^="#"]')];
 
 const translations = {
   de: {
@@ -16,17 +17,17 @@ const translations = {
       contact: "Kontakt",
     },
     hero: {
-      eyebrow: "Customer Success · Product · AI · Web",
+      eyebrow: "Customer Success / Product / AI / Web",
       title:
-        'Ich verbinde Kundenverständnis,<br class="mobile-only-break"> Produktdenken und Umsetzung.',
+        "Ich verbinde Kundenverständnis, Produktdenken und Umsetzung.",
       lead: "Ich bin Driton Ajnuni aus Luzern. Im Customer Success begleite ich Kunden produktiv durch Onboarding, Support und Prozesse. Nebenbei baue ich Apps, Websites und Marken, wodurch ich Produkt, Design, AI-Tools und Umsetzung aus eigener Praxis kenne.",
       primary: "Projekte ansehen",
       secondary: "Kontakt aufnehmen",
     },
     profile: {
-      status: "Luzern · Customer Success · Product Builder",
+      status: "Luzern / Customer Success / Product Builder",
       title:
-        'Stärken in Support,<br class="mobile-only-break"> Produkt und Launches.',
+        "Stärken in Support, Produkt und Launches.",
       text: "Für Arbeitgeber bringe ich Kundenfokus, saubere Kommunikation und die Fähigkeit mit, Ideen schnell in sichtbare Ergebnisse zu verwandeln.",
     },
     marquee: {
@@ -35,7 +36,7 @@ const translations = {
       three: "iOS App Founder",
       four: "Customer Success",
       five: "AI Workflows",
-      six: "Deutsch · Englisch · Albanisch",
+      six: "Deutsch / Englisch / Albanisch",
       seven: "Schweiz & Deutschland",
     },
     work: {
@@ -98,6 +99,7 @@ const translations = {
     tools: {
       eyebrow: "Programme & Tools",
       title: "Womit ich arbeite.",
+      lead: "Ein ausgewähltes Toolkit für Kunden, Produkte und digitale Ideen.",
       csm: "Customer Success",
       backend: "Backend & Daten",
       web: "Web & Build",
@@ -115,10 +117,14 @@ const translations = {
       statTwo: "Websites gebaut",
       statThree: "Sprachen",
       statFour: "Erfahrung in der Schweiz und Deutschland",
+      principleLabel: "Mein Prinzip",
+      principleTitle: "Weniger zerdenken. Mehr ausprobieren.",
       noteOne:
-        "Ich übernehme Verantwortung, denke kreativ und probiere lieber aus, statt Dinge endlos zu überdenken.",
+        "Ich übernehme Verantwortung, teste Ideen früh und entwickle aus Feedback konkrete Ergebnisse.",
+      balanceLabel: "Abseits vom Screen",
+      balanceTitle: "Bewegung hält den Kopf klar.",
       noteTwo:
-        "Wenn ich nicht arbeite oder baue, bin ich meistens im Gym oder schaue mir neue Tech an.",
+        "Im Gym finde ich Ausgleich. Neue Tech und eigene Ideen sorgen dafür, dass die Neugier bleibt.",
     },
     contact: {
       eyebrow: "Kontakt",
@@ -141,17 +147,17 @@ const translations = {
       contact: "Contact",
     },
     hero: {
-      eyebrow: "Customer Success · Product · AI · Web",
+      eyebrow: "Customer Success / Product / AI / Web",
       title:
-        'I connect customer understanding,<br class="mobile-only-break"> product thinking and execution.',
+        "I connect customer understanding, product thinking and execution.",
       lead: "I am Driton Ajnuni from Lucerne. In Customer Success, I guide customers through onboarding, support and processes. On the side, I build apps, websites and brands, which gives me hands-on experience across product, design, AI tools and execution.",
       primary: "View projects",
       secondary: "Get in touch",
     },
     profile: {
-      status: "Lucerne · Customer Success · Product Builder",
+      status: "Lucerne / Customer Success / Product Builder",
       title:
-        'Strengths in support,<br class="mobile-only-break"> product and launches.',
+        "Strengths in support, product and launches.",
       text: "For employers, I bring customer focus, clear communication and the ability to turn ideas into visible results quickly.",
     },
     marquee: {
@@ -160,7 +166,7 @@ const translations = {
       three: "iOS app founder",
       four: "Customer Success",
       five: "AI workflows",
-      six: "German · English · Albanian",
+      six: "German / English / Albanian",
       seven: "Switzerland & Germany",
     },
     work: {
@@ -223,6 +229,7 @@ const translations = {
     tools: {
       eyebrow: "Programs & Tools",
       title: "What I work with.",
+      lead: "A focused toolkit for customers, products and digital ideas.",
       csm: "Customer Success",
       backend: "Backend & Data",
       web: "Web & Build",
@@ -240,10 +247,14 @@ const translations = {
       statTwo: "websites built",
       statThree: "languages",
       statFour: "experience in Switzerland and Germany",
+      principleLabel: "My principle",
+      principleTitle: "Think less. Test more.",
       noteOne:
-        "I take ownership, think creatively and prefer trying things out instead of overthinking.",
+        "I take ownership, test ideas early and turn feedback into concrete results.",
+      balanceLabel: "Away from the screen",
+      balanceTitle: "Movement keeps my mind clear.",
       noteTwo:
-        "When I am not working or building, I am usually at the gym or checking out new tech.",
+        "The gym gives me balance. New technology and personal ideas keep me curious.",
     },
     contact: {
       eyebrow: "Contact",
@@ -265,39 +276,11 @@ const getTranslation = (language, key) =>
     .split(".")
     .reduce((value, part) => value && value[part], translations[language]);
 
-const closeMobileMenu = () => {
-  nav.classList.remove("open");
-  mobileNavToggle.setAttribute("aria-expanded", "false");
-  mobileNavToggle.setAttribute(
-    "aria-label",
-    translations[root.lang || "de"].aria.menuOpen,
-  );
-};
-
-const closeLanguageMenu = () => {
-  languageControl.classList.remove("open");
-  languageToggle.setAttribute("aria-expanded", "false");
-};
-
-const applyLanguage = (language) => {
-  const dictionary = translations[language] ? language : "de";
-  root.lang = dictionary;
-  localStorage.setItem("language", dictionary);
-
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const value = getTranslation(dictionary, element.dataset.i18n);
-    if (value) element.textContent = value;
-  });
-
-  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
-    const value = getTranslation(dictionary, element.dataset.i18nHtml);
-    if (value) element.innerHTML = value;
-  });
-
+const syncLanguageControls = (dictionary) => {
   languageToggle.textContent = dictionary.toUpperCase();
   languageToggle.setAttribute(
     "aria-label",
-    translations[dictionary].aria.language,
+    `${dictionary.toUpperCase()} ${translations[dictionary].aria.language}`,
   );
   languageButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.lang === dictionary);
@@ -318,10 +301,45 @@ const applyLanguage = (language) => {
   );
 };
 
+const closeMobileMenu = () => {
+  nav.classList.remove("open");
+  mobileNavToggle.setAttribute("aria-expanded", "false");
+  mobileNavToggle.setAttribute(
+    "aria-label",
+    translations[root.lang || "de"].aria.menuOpen,
+  );
+};
+
+const closeLanguageMenu = () => {
+  languageControl.classList.remove("open");
+  languageToggle.setAttribute("aria-expanded", "false");
+};
+
+const applyLanguage = (language) => {
+  const dictionary = translations[language] ? language : "de";
+  const shouldTranslateDom = root.lang !== dictionary;
+  root.lang = dictionary;
+  localStorage.setItem("language", dictionary);
+
+  if (shouldTranslateDom) {
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const value = getTranslation(dictionary, element.dataset.i18n);
+      if (value) element.textContent = value;
+    });
+
+    document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+      const value = getTranslation(dictionary, element.dataset.i18nHtml);
+      if (value) element.innerHTML = value;
+    });
+  }
+
+  syncLanguageControls(dictionary);
+};
+
 const updateThemeUI = (theme) => {
   root.setAttribute("data-theme", theme);
   const isDark = theme === "dark";
-  themeToggle.textContent = isDark ? "☀️" : "🌙";
+  themeToggle.dataset.theme = theme;
   themeToggle.setAttribute(
     "aria-label",
     isDark
@@ -331,8 +349,11 @@ const updateThemeUI = (theme) => {
 };
 
 const getPreferredTheme = () => {
-  localStorage.removeItem("theme");
-  return "light";
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light" || savedTheme === "dark") return savedTheme;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 };
 
 const setTheme = (theme) => {
@@ -397,12 +418,42 @@ document.addEventListener("keydown", (event) => {
 setTheme(getPreferredTheme());
 applyLanguage(localStorage.getItem("language") || "de");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add("show");
-    });
-  },
-  { threshold: 0.14 },
-);
-revealItems.forEach((item) => observer.observe(item));
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  revealItems.forEach((item) => item.classList.add("show"));
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -6% 0px" },
+  );
+  revealItems.forEach((item) => observer.observe(item));
+}
+
+const observedSections = navLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+if (observedSections.length) {
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${visible.target.id}`;
+        link.classList.toggle("active", isActive);
+        if (isActive) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    },
+    { rootMargin: "-28% 0px -58% 0px", threshold: [0, 0.25, 0.6] },
+  );
+  observedSections.forEach((section) => navObserver.observe(section));
+}
