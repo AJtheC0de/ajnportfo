@@ -58,17 +58,9 @@ const translations = {
         tag: "Laufend · Web Agency",
         text: "Mein Web-Projekt für digitale Auftritte. Fokus auf Positionierung, Struktur, Design und Websites, die schnell verständlich machen, wofür eine Marke steht.",
       },
-      ndr: {
-        tag: "Aufbau · Running Brand",
-        text: "Eine Running-Wear-Marke im Aufbau. Das Projekt zeigt meine Arbeit an Community, Markenidentität, Content und langfristiger Produktidee.",
-      },
       bardhesija: {
-        tag: "Vertrieb · Kosovo",
-        text: "Ein Vertriebsprojekt im Kosovo. Es zeigt meine Erfahrung mit Produktpräsentation, Marktdenken und dem Aufbau einer verständlichen Verkaufsstory.",
-      },
-      notfunded: {
-        tag: "Aufbau · Clothing Brand",
-        text: "Eine Clothing Brand mit eigener Haltung und digitaler Markenwelt. Fokus auf Positionierung, visuelle Sprache und Community-Gefühl.",
+        tag: "Eigenmarke · Kosovo",
+        text: "Eine Zahnaufhellungscreme, die ich selbst gebrandet und im Kosovo vermarktet habe. Von der Positionierung bis zur Produktpräsentation habe ich die Marke eigenständig aufgebaut.",
       },
       stealth: {
         tag: "In Arbeit · Bigger Product",
@@ -188,17 +180,9 @@ const translations = {
         tag: "Ongoing · Web Agency",
         text: "My web project for digital presences. Focused on positioning, structure, design and websites that quickly communicate what a brand stands for.",
       },
-      ndr: {
-        tag: "Building · Running Brand",
-        text: "A running-wear brand in progress. The project shows my work on community, brand identity, content and a long-term product idea.",
-      },
       bardhesija: {
-        tag: "Sales · Kosovo",
-        text: "A distribution project in Kosovo. It shows my experience with product presentation, market thinking and building a clear sales story.",
-      },
-      notfunded: {
-        tag: "Building · Clothing Brand",
-        text: "A clothing brand with its own attitude and digital brand world. Focused on positioning, visual language and a community feeling.",
+        tag: "Own Brand · Kosovo",
+        text: "A teeth-whitening cream that I branded and marketed myself in Kosovo. I built the brand independently, from positioning to product presentation.",
       },
       stealth: {
         tag: "In Progress · Bigger Product",
