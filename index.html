@@ -8,416 +8,443 @@
     <title>Driton Ajnuni - Portfolio</title>
     <meta
       name="description"
-      content="Driton Ajnuni aus Luzern verbindet Customer Success, Produktdenken, AI-Workflows und Web-Umsetzung."
+      content="Driton Ajnuni, Customer Success Manager aus Luzern: 7+ Jahre B2B SaaS, technische Implementierung und eigene Produkte."
     />
     <link rel="canonical" href="https://dritonajnuni.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Driton Ajnuni - Portfolio" />
     <meta
       property="og:description"
-      content="Customer Success, Product, AI und Web: Projekte, Skills und Kontakt von Driton Ajnuni."
+      content="Customer Success, SaaS und eigene Produkte: Erfahrung, Projekte und Kontakt von Driton Ajnuni."
     />
     <meta property="og:image" content="Driton_Ajnuni.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f6f7f9" />
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
     <link rel="preload" as="image" href="driton-portrait.webp" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#work">Zum Inhalt springen</a>
-    <div class="page-shell">
-      <header class="nav">
-        <a class="logo" href="#top" aria-label="Zur Startseite">
-          <picture>
-            <source srcset="driton-logo.webp" type="image/webp" />
-            <img class="logo-image" src="driton-logo.jpg" alt="Driton Ajnuni" width="96" height="96" />
-          </picture>
-          <span class="logo-wordmark">Driton Ajnuni</span>
-        </a>
-        <button
-          class="mobile-nav-toggle"
-          type="button"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-        >
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <span class="nav-sentinel" aria-hidden="true"></span>
+    <a class="status-bar" href="#contact">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="status-long" data-i18n="status.long">Offen für neue Stellen in Customer Success & Account Management</span>
+      <span class="status-short" data-i18n="status.short">Offen für neue Stellen</span>
+      <i class="ph ph-arrow-right" aria-hidden="true"></i>
+    </a>
+
+    <header class="nav">
+      <a class="logo" href="#top" aria-label="Zur Startseite">
+        <picture>
+          <source srcset="driton-logo.webp" type="image/webp" />
+          <img class="logo-image" src="driton-logo.jpg" alt="" width="96" height="96" />
+        </picture>
+        <span class="logo-wordmark">Driton Ajnuni</span>
+      </a>
+      <a class="status-pill" href="#contact">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span data-i18n="status.pill">Offen für Stellen</span>
+      </a>
+      <nav aria-label="Hauptnavigation">
+        <a href="#work" data-i18n="nav.work">Projekte</a>
+        <a href="#experience" data-i18n="nav.experience">Erfahrung</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#about" data-i18n="nav.about">Über mich</a>
+        <a href="#contact" class="nav-cta" data-i18n="nav.contact">Kontakt</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="language-control">
+          <button class="language-toggle icon-button" type="button" aria-label="DE Sprache wechseln" aria-expanded="false">DE</button>
+          <div class="language-menu" aria-label="Sprache auswählen">
+            <button type="button" data-lang="de">Deutsch</button>
+            <button type="button" data-lang="en">English</button>
+          </div>
+        </div>
+        <button class="theme-toggle icon-button" type="button" aria-label="Theme wechseln">
+          <i class="ph ph-moon" aria-hidden="true"></i>
+          <i class="ph ph-sun" aria-hidden="true"></i>
+        </button>
+        <button class="mobile-nav-toggle icon-button" type="button" aria-label="Menü öffnen" aria-expanded="false">
           <span></span>
         </button>
-        <nav aria-label="Hauptnavigation">
-          <a href="#work" data-i18n="nav.work">Projekte</a>
-          <a href="#skills" data-i18n="nav.skills">Skills</a>
-          <a href="#about" data-i18n="nav.about">Über mich</a>
-          <a href="#contact" data-i18n="nav.contact">Kontakt</a>
-        </nav>
-        <div class="nav-actions">
-          <div class="language-control">
-            <button
-              class="language-toggle"
-              type="button"
-              aria-label="DE Sprache wechseln"
-              aria-expanded="false"
-            >
-              DE
-            </button>
-            <div class="language-menu" aria-label="Sprache auswählen">
-              <button type="button" data-lang="de">Deutsch</button>
-              <button type="button" data-lang="en">English</button>
-            </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-aurora" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow hero-in" style="--d: 0" data-i18n="hero.eyebrow">Customer Success Manager in Luzern</p>
+          <h1 data-split data-scramble data-i18n="hero.title">Kundenerfolg mit Builder-Mindset.</h1>
+          <p class="lead hero-in" style="--d: 5" data-i18n="hero.lead">
+            7+ Jahre B2B SaaS. Ich betreue 400+ Accounts, halte rund 90 % Renewal Rate und baue nebenbei eigene Produkte.
+          </p>
+          <div class="hero-actions hero-in" style="--d: 7">
+            <a href="#work" class="btn btn-primary magnetic">
+              <span data-i18n="hero.primary">Projekte ansehen</span>
+              <i class="ph ph-arrow-down-right" aria-hidden="true"></i>
+            </a>
+            <a href="#contact" class="btn btn-ghost" data-i18n="hero.secondary">Kontakt</a>
           </div>
-          <button class="theme-toggle" type="button" aria-label="Theme wechseln">
-            <span aria-hidden="true"></span>
-          </button>
         </div>
-      </header>
-
-      <main id="top">
-        <section class="hero section">
-          <div class="hero-copy reveal show">
-            <p class="eyebrow" data-i18n="hero.eyebrow">
-              Customer Success / Product / AI / Web
-            </p>
-            <h1 data-i18n-html="hero.title">
-              Ich verbinde Kundenverständnis,
-              Produktdenken und Umsetzung.
-            </h1>
-            <p class="lead" data-i18n="hero.lead">
-              Ich bin Driton Ajnuni aus Luzern. Im Customer Success begleite ich
-              Kunden produktiv durch Onboarding, Support und Prozesse. Nebenbei
-              baue ich Apps, Websites und Marken, wodurch ich Produkt, Design,
-              AI-Tools und Umsetzung aus eigener Praxis kenne.
-            </p>
-            <div class="hero-actions">
-              <a href="#work" class="btn primary" data-i18n="hero.primary"
-                >Projekte ansehen</a
-              >
-              <a href="#contact" class="btn secondary" data-i18n="hero.secondary"
-                >Kontakt aufnehmen</a
-              >
-            </div>
+        <div class="hero-visual">
+          <div class="portrait">
+            <picture>
+              <source srcset="driton-portrait.webp" type="image/webp" />
+              <img src="driton-portrait.jpg" alt="Porträt von Driton Ajnuni" width="567" height="720" fetchpriority="high" />
+            </picture>
           </div>
-          <div class="hero-visual reveal show delay">
-            <div class="portrait-frame">
-              <picture>
-                <source srcset="driton-portrait.webp" type="image/webp" />
-                <img
-                  class="profile-photo"
-                  src="driton-portrait.jpg"
-                  alt="Driton Ajnuni"
-                  width="567"
-                  height="720"
-                  fetchpriority="high"
-                />
-              </picture>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Kennzahlen">
+        <div class="stat stat-lavender" style="--i: 0">
+          <span class="stat-tag" data-i18n="stats.accountsTag">Portfolio</span>
+          <strong><span class="count" data-to="400">400</span>+</strong>
+          <span data-i18n="stats.accounts">B2B-SaaS-Accounts betreut</span>
+        </div>
+        <div class="stat stat-mint" style="--i: 1">
+          <span class="stat-tag" data-i18n="stats.renewalTag">Retention</span>
+          <strong>~<span class="count" data-to="90">90</span>%</strong>
+          <span data-i18n="stats.renewal">Renewal Rate</span>
+        </div>
+        <div class="stat stat-sky" style="--i: 2">
+          <span class="stat-tag" data-i18n="stats.revenueTag">Wachstum</span>
+          <strong>+<span class="count" data-to="45">45</span>%</strong>
+          <span data-i18n="stats.revenue">Account-Umsatz durch Upselling</span>
+        </div>
+        <div class="stat stat-fog" style="--i: 3">
+          <span class="stat-tag" data-i18n="stats.featuresTag">Produkt</span>
+          <strong><span class="count" data-to="10">10</span>+</strong>
+          <span data-i18n="stats.features">Features aus Kundenfeedback umgesetzt</span>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-head">
+          <h2 data-split data-i18n="work.title">Eigene Projekte.</h2>
+          <p class="section-lead reveal" data-i18n="work.lead">Neben dem Job baue ich Produkte selbst, von der Idee bis zum Launch.</p>
+        </div>
+
+        <div class="bento">
+          <a class="card card-jobsi reveal" href="https://www.jobsi.work/home" target="_blank" rel="noreferrer">
+            <div class="card-top">
+              <img class="app-icon" src="assets/jobsi.png" alt="" width="128" height="128" loading="lazy" />
+              <span class="tag tag-new" data-i18n="projects.jobsi.tag">Neu · Web App</span>
             </div>
-            <div class="profile-card">
-              <p class="status" data-i18n="profile.status">
-                Luzern / Customer Success / Product Builder
-              </p>
-              <h2 data-i18n-html="profile.title">
-                Stärken in Support, Produkt und Launches.
-              </h2>
-              <p data-i18n="profile.text">
-                Für Arbeitgeber bringe ich Kundenfokus, saubere Kommunikation und
-                die Fähigkeit mit, Ideen schnell in sichtbare Ergebnisse zu
-                verwandeln.
+            <div class="card-body">
+              <h3>Jobsi</h3>
+              <p class="card-quote" data-i18n="projects.jobsi.quote">„Lohn ist nicht alles. Zum Glück.“</p>
+              <p data-i18n="projects.jobsi.text">
+                Lohnt sich der Jobwechsel? Jobsi vergleicht zwei Stellen nach Nettolohn, Fahrtkosten, Arbeitszeit und Ferien. Kostenlos und ohne Anmeldung.
               </p>
             </div>
-          </div>
-        </section>
+            <span class="card-link"><span data-i18n="projects.visit">Ansehen</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </a>
 
-        <section class="marquee" aria-label="Kurzprofil">
-          <div class="marquee-track">
-            <div class="marquee-group">
-              <span data-i18n="marquee.one">400+ Onboardings</span>
-              <span data-i18n="marquee.two">40+ Websites</span>
-              <span data-i18n="marquee.three">iOS App Founder</span>
-              <span data-i18n="marquee.four">Customer Success</span>
-              <span data-i18n="marquee.five">AI Workflows</span>
-              <span data-i18n="marquee.six">Deutsch / Englisch / Albanisch</span>
-              <span data-i18n="marquee.seven">Schweiz & Deutschland</span>
+          <a class="card card-imposteri reveal" style="--d: 1" href="https://apps.apple.com/ch/app/imposteri/id6749374409" target="_blank" rel="noreferrer">
+            <div class="card-top">
+              <img class="app-icon" src="assets/imposteri.jpg" alt="" width="256" height="256" loading="lazy" />
+              <span class="tag" data-i18n="projects.imposteri.tag">Live · iOS Game</span>
             </div>
-            <div class="marquee-group" aria-hidden="true">
-              <span data-i18n="marquee.one">400+ Onboardings</span>
-              <span data-i18n="marquee.two">40+ Websites</span>
-              <span data-i18n="marquee.three">iOS App Founder</span>
-              <span data-i18n="marquee.four">Customer Success</span>
-              <span data-i18n="marquee.five">AI Workflows</span>
-              <span data-i18n="marquee.six">Deutsch / Englisch / Albanisch</span>
-              <span data-i18n="marquee.seven">Schweiz & Deutschland</span>
+            <div class="card-body">
+              <h3>Imposteri</h3>
+              <p data-i18n="projects.imposteri.text">Ein Party-Game mit Social-Mechaniken und Powers. Design, Entwicklung und App-Store-Launch komplett selbst gemacht.</p>
             </div>
-          </div>
-        </section>
+            <div class="card-foot">
+              <span class="metric"><strong>1'400+</strong> <span data-i18n="projects.imposteri.metric">Downloads</span></span>
+              <span class="card-link"><span data-i18n="projects.visit">Ansehen</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
 
-        <section id="work" class="section work-section">
-          <div class="section-head reveal">
-            <p class="eyebrow" data-i18n="work.eyebrow">Ausgewählte Projekte</p>
-            <h2 data-i18n="work.title">Projekte, die zeigen wie ich arbeite</h2>
-          </div>
-          <div class="projects">
-            <article class="project-card project-feature reveal">
-              <div>
-                <p class="tag" data-i18n="projects.imposteri.tag">
-                  Live · Mobile Game
-                </p>
-                <h3>Imposteri</h3>
-                <p data-i18n="projects.imposteri.text">
-                  Ein veröffentlichtes iOS-Spiel mit Social-Mechaniken, Powers
-                  und täglicher Motivation. Zeigt meine Stärke, eine Idee bis zum
-                  App-Store-Launch zu bringen.
-                </p>
-                <div class="chips">
-                  <span>iOS Launch</span><span>Game Design</span><span>Retention</span>
-                </div>
-              </div>
-              <a
-                class="project-link"
-                href="https://apps.apple.com/ch/app/imposteri/id6749374409#information"
-                target="_blank"
-                rel="noreferrer"
-                data-i18n="projects.button"
-                >Projekt ansehen</a
-              >
-            </article>
-            <article class="project-card reveal delay-1">
-              <div>
-                <p class="tag" data-i18n="projects.marook.tag">
-                  Live · AI Learning App
-                </p>
-                <h3>Marook</h3>
-                <p data-i18n="projects.marook.text">
-                  Eine Lern-App, die Bücher, Notizen und Lernkarten verbindet.
-                  Hier arbeite ich an AI-gestützten Lernflows, klarer UX und
-                  einem echten Nutzen für Nutzer.
-                </p>
-                <div class="chips">
-                  <span>AI</span><span>Learning UX</span><span>Product</span>
-                </div>
-              </div>
-              <a
-                class="project-link"
-                href="https://apps.apple.com/ch/app/marook/id6774602986"
-                target="_blank"
-                rel="noreferrer"
-                data-i18n="projects.button"
-                >Projekt ansehen</a
-              >
-            </article>
-            <article class="project-card reveal delay-2">
-              <div>
-                <p class="tag" data-i18n="projects.sixam.tag">
-                  Laufend · Web Agency
-                </p>
-                <h3>sixam.io</h3>
-                <p data-i18n="projects.sixam.text">
-                  Mein Web-Projekt für digitale Auftritte. Fokus auf
-                  Positionierung, Struktur, Design und Websites, die schnell
-                  verständlich machen, wofür eine Marke steht.
-                </p>
-                <div class="chips">
-                  <span>Websites</span><span>Branding</span><span>Design</span>
-                </div>
-              </div>
-              <a
-                class="project-link"
-                href="https://www.sixam.io"
-                target="_blank"
-                rel="noreferrer"
-                data-i18n="projects.button"
-                >Projekt ansehen</a
-              >
-            </article>
-            <article class="project-card reveal delay-3">
-              <div>
-                <p class="tag" data-i18n="projects.bardhesija.tag">
-                  Eigenmarke · Kosovo
-                </p>
-                <h3>Bardhesija</h3>
-                <p data-i18n="projects.bardhesija.text">
-                  Eine Zahnaufhellungscreme, die ich selbst gebrandet und im
-                  Kosovo vermarktet habe. Von der Positionierung bis zur
-                  Produktpräsentation habe ich die Marke eigenständig aufgebaut.
-                </p>
-                <div class="chips">
-                  <span>Branding</span><span>Marketing</span><span>Sales</span>
-                </div>
-              </div>
-              <a
-                class="project-link"
-                href="https://dandy-stories-562094.framer.app/"
-                target="_blank"
-                rel="noreferrer"
-                data-i18n="projects.button"
-                >Projekt ansehen</a
-              >
-            </article>
-            <article class="project-card stealth-card reveal delay-4">
-              <div>
-                <p class="tag" data-i18n="projects.stealth.tag">
-                  In Arbeit · Bigger Product
-                </p>
-                <h3>******.app</h3>
-                <p data-i18n="projects.stealth.text">
-                  Ein größeres Produkt ist in Arbeit. Noch nicht offiziell, aber
-                  ein gutes Beispiel dafür, dass ich langfristig denke, validiere
-                  und eigene Produktideen weiterentwickle.
-                </p>
-                <div class="chips">
-                  <span>Research</span><span>Product</span><span>Upcoming</span>
-                </div>
-              </div>
-              <span
-                class="project-link disabled-link"
-                aria-disabled="true"
-                data-i18n="projects.soon"
-                >Coming soon</span
-              >
-            </article>
-          </div>
-        </section>
+          <a class="card card-marook reveal" style="--d: 2" href="https://apps.apple.com/ch/app/marook/id6774602986" target="_blank" rel="noreferrer">
+            <div class="card-top">
+              <img class="app-icon" src="assets/marook.jpg" alt="" width="256" height="256" loading="lazy" />
+              <span class="tag" data-i18n="projects.marook.tag">Live · iOS App</span>
+            </div>
+            <div class="card-body">
+              <h3>Marook</h3>
+              <p data-i18n="projects.marook.text">Eine Lern-App, die Bücher, Notizen und Lernkarten mit AI-gestützten Lernflows verbindet.</p>
+            </div>
+            <span class="card-link"><span data-i18n="projects.visit">Ansehen</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </a>
 
-        <section id="skills" class="section skills-section">
-          <div class="section-head reveal">
-            <h2 data-i18n="skills.title">Meine Stärken auf einen Blick.</h2>
-            <p class="section-lead" data-i18n="skills.lead">
-              Arbeitgeber sollen sofort sehen: Ich kann mit Kunden umgehen,
-              Produkte erklären, Probleme strukturieren und digitale Lösungen
-              praktisch umsetzen.
-            </p>
-          </div>
-          <div class="strength-grid">
-            <article class="strength-card reveal">
-              <strong>01</strong>
-              <h3 data-i18n="skills.customerTitle">Customer Success</h3>
-              <p data-i18n="skills.customerText">
-                Onboardings, Support, Schulungen und klare Kommunikation mit
-                Kunden. Ich übersetze Funktionen in echten Nutzen.
-              </p>
-            </article>
-            <article class="strength-card reveal delay-1">
-              <strong>02</strong>
-              <h3 data-i18n="skills.productTitle">Produkt & Prozesse</h3>
-              <p data-i18n="skills.productText">
-                Ich erkenne wiederkehrende Probleme, strukturiere Abläufe und
-                denke in einfachen Lösungen statt komplizierten Umwegen.
-              </p>
-            </article>
-            <article class="strength-card reveal delay-2">
-              <strong>03</strong>
-              <h3 data-i18n="skills.buildTitle">Web, Apps & Launches</h3>
-              <p data-i18n="skills.buildText">
-                40+ Websites, eigene iOS-Apps und laufende Brands. Ich kann Ideen
-                nicht nur planen, sondern auch sichtbar machen.
-              </p>
-            </article>
-            <article class="strength-card reveal delay-3">
-              <strong>04</strong>
-              <h3 data-i18n="skills.aiTitle">AI & moderne Tools</h3>
-              <p data-i18n="skills.aiText">
-                Ich nutze AI-Tools für Recherche, Content, Prototyping und
-                schnellere Workflows, ohne den praktischen Blick zu verlieren.
-              </p>
-            </article>
-          </div>
-          <div class="skill-proof reveal">
-            <div><span data-i18n="skills.proofOne">400+ Kunden onboarded</span></div>
-            <div><span data-i18n="skills.proofTwo">40+ Websites umgesetzt</span></div>
-            <div><span data-i18n="skills.proofThree">2 iOS-Apps veröffentlicht</span></div>
-            <div><span data-i18n="skills.proofFour">3 Sprachen im Alltag</span></div>
-          </div>
-        </section>
+          <a class="card card-sixam reveal" style="--d: 3" href="https://www.sixam.io" target="_blank" rel="noreferrer">
+            <div class="card-top">
+              <img class="app-icon app-icon-light" src="assets/sixam.png" alt="" width="256" height="256" loading="lazy" />
+              <span class="tag" data-i18n="projects.sixam.tag">Web Agency</span>
+            </div>
+            <div class="card-body">
+              <h3>sixam.io</h3>
+              <p data-i18n="projects.sixam.text">Websites für kleine Unternehmen, vom Verkauf über die Umsetzung bis zum laufenden Support.</p>
+            </div>
+            <div class="card-foot">
+              <span class="metric"><strong>20+</strong> <span data-i18n="projects.sixam.metric">Websites</span></span>
+              <span class="card-link"><span data-i18n="projects.visit">Ansehen</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
 
-        <section class="section tools reveal">
-          <div class="section-head">
-            <h2 data-i18n="tools.title">Womit ich arbeite.</h2>
-            <p class="section-lead" data-i18n="tools.lead">Ein ausgewähltes Toolkit für Kunden, Produkte und digitale Ideen.</p>
-          </div>
-          <div class="tool-grid" aria-label="Programme und Tools">
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/intercom" alt="" loading="lazy" /><span>Intercom</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/zendesk" alt="" loading="lazy" /><span>Zendesk</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/hubspot" alt="" loading="lazy" /><span>HubSpot</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/supabase" alt="" loading="lazy" /><span>Supabase</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/firebase" alt="" loading="lazy" /><span>Firebase</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/stripe" alt="" loading="lazy" /><span>Stripe</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/framer" alt="" loading="lazy" /><span>Framer</span></div>
-            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="" loading="lazy" /><span>VS Code</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/anthropic" alt="" loading="lazy" /><span>Claude</span></div>
-            <div class="tool-item"><img src="https://cdn.jsdelivr.net/npm/@lobehub/icons-static-svg@latest/icons/openai.svg" alt="" loading="lazy" /><span>OpenAI</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/googlegemini" alt="" loading="lazy" /><span>Gemini</span></div>
-            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="" loading="lazy" /><span>Canva</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/gimp" alt="" loading="lazy" /><span>GIMP</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/miro" alt="" loading="lazy" /><span>Miro</span></div>
-            <div class="tool-item"><img src="https://cdn.simpleicons.org/notion" alt="" loading="lazy" /><span>Notion</span></div>
-          </div>
-        </section>
+          <a class="card card-bardhesija reveal" style="--d: 4" href="https://dandy-stories-562094.framer.app/" target="_blank" rel="noreferrer">
+            <div class="card-top">
+              <span class="mono-mark mark-bardhesija" aria-hidden="true">B</span>
+              <span class="tag" data-i18n="projects.bardhesija.tag">Eigenmarke · Kosovo</span>
+            </div>
+            <div class="card-body">
+              <h3>Bardhesija</h3>
+              <p data-i18n="projects.bardhesija.text">Eine Zahnaufhellungscreme, die ich selbst gebrandet und im Kosovo vermarktet habe. Von der Positionierung bis zur Produktpräsentation.</p>
+            </div>
+            <span class="card-link"><span data-i18n="projects.visit">Ansehen</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </a>
+        </div>
+      </section>
 
-        <section id="about" class="section about reveal">
-          <div class="about-copy">
-            <h2 data-i18n="about.title">
-              Ich mache komplexe Produkte verständlich und baue eigene Ideen von
-              null auf.
-            </h2>
-            <p data-i18n="about.one">
-              Bei Belbo arbeite ich im Customer Success und habe über 400 Kunden
-              onboarded. Am meisten motiviert mich, wenn Menschen ein Produkt
-              nicht nur bedienen, sondern wirklich verstehen und daraus echten
-              Nutzen ziehen.
-            </p>
-            <p data-i18n="about.two">
-              Ich halte Dinge gerne einfach: Prozesse, Kommunikation und Tools
-              sollen klar sein. Neben der Arbeit baue ich eigene Projekte, habe
-              über 40 Websites umgesetzt und mit Imposteri und Marook zwei eigene
-              iOS-Apps im App Store veröffentlicht.
-            </p>
-          </div>
-          <div class="about-highlights" aria-label="Persönliche Highlights">
-            <div><strong>400+</strong><span data-i18n="about.statOne">Kunden onboarded</span></div>
-            <div><strong>40+</strong><span data-i18n="about.statTwo">Websites gebaut</span></div>
-            <div><strong>3</strong><span data-i18n="about.statThree">Sprachen</span></div>
+      <section id="experience" class="panel">
+        <div class="section experience">
+        <div class="section-head">
+          <h2 data-split data-i18n="experience.title">Erfahrung.</h2>
+        </div>
+        <ol class="timeline">
+          <li class="job reveal">
+            <span class="job-date">2022 - 2026</span>
+            <div class="job-main">
+              <h3><span data-i18n="experience.webrebels.role">Customer Success Manager</span> <span class="job-company">Webrebels GmbH</span></h3>
+              <ul>
+                <li data-i18n="experience.webrebels.one">400+ B2B-SaaS-Accounts vom Onboarding bis zur Vertragsverlängerung betreut</li>
+                <li data-i18n="experience.webrebels.two">Rund 90 % Renewal Rate durch proaktives Account Management und frühes Erkennen gefährdeter Accounts</li>
+                <li data-i18n="experience.webrebels.three">Account-Umsatz um 45 % gesteigert durch gezieltes Upselling und Cross-Selling</li>
+                <li data-i18n="experience.webrebels.four">Kundenfeedback mit dem Produktteam priorisiert, 10+ Features daraus umgesetzt</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job reveal">
+            <span class="job-date">2019 - 2022</span>
+            <div class="job-main">
+              <h3><span data-i18n="experience.shore.role">Tech Implementation Manager</span> <span class="job-company">Shore GmbH</span></h3>
+              <ul>
+                <li data-i18n="experience.shore.one">Direkte Kundenkommunikation in 150+ Website- und Digitalprojekten, vom Kickoff bis zum Launch</li>
+                <li data-i18n="experience.shore.two">40+ responsive Websites und mobile Web-Apps für KMU konzipiert und gebaut</li>
+                <li data-i18n="experience.shore.three">E-Commerce- und Online-Shop-Lösungen als digitalen Vertriebskanal eingerichtet</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job reveal">
+            <span class="job-date">2018 - 2019</span>
+            <div class="job-main">
+              <h3><span data-i18n="experience.picturemaxx.role">Business Administration Manager</span> <span class="job-company">Picturemaxx AG</span></h3>
+              <ul>
+                <li data-i18n="experience.picturemaxx.one">B2B-Kundenverträge erstellt und verwaltet, interne und externe Projekte koordiniert</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job reveal">
+            <span class="job-date">2014 - 2017</span>
+            <div class="job-main">
+              <h3><span data-i18n="experience.hotel.role">Ausbildung Hotelfachmann</span> <span class="job-company">München</span></h3>
+              <ul>
+                <li data-i18n="experience.hotel.one">Gastgeben von der Pike auf gelernt. Bis heute die Basis für meinen Umgang mit Kunden.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+        </div>
+      </section>
+
+      <section id="skills" class="section skills">
+        <div class="section-head">
+          <h2 data-split data-i18n="skills.title">Was ich mitbringe.</h2>
+        </div>
+        <div class="skill-grid">
+          <article class="skill skill-wide skill-lavender reveal">
+            <i class="ph ph-handshake" aria-hidden="true"></i>
             <div>
-              <strong>CH/DE</strong>
-              <span data-i18n="about.statFour">Erfahrung in der Schweiz und Deutschland</span>
+              <h3 data-i18n="skills.csTitle">Customer Success & Retention</h3>
+              <p data-i18n="skills.csText">Account Management über den ganzen Lebenszyklus. Ich erkenne Risiken früh und mache aus Kunden langfristige Partner.</p>
             </div>
-          </div>
-          <div class="about-notes" aria-label="Arbeitsweise und Ausgleich">
-            <article class="personal-note principle-note">
-              <span class="note-label" data-i18n="about.principleLabel">Mein Prinzip</span>
-              <h3 data-i18n="about.principleTitle">Weniger zerdenken. Mehr ausprobieren.</h3>
-              <p data-i18n="about.noteOne">
-                Ich übernehme Verantwortung, teste Ideen früh und entwickle aus
-                Feedback konkrete Ergebnisse.
-              </p>
-            </article>
-            <article class="personal-note balance-note">
-              <span class="note-label" data-i18n="about.balanceLabel">Abseits vom Screen</span>
-              <h3 data-i18n="about.balanceTitle">Bewegung hält den Kopf klar.</h3>
-              <p data-i18n="about.noteTwo">
-                Im Gym finde ich Ausgleich. Neue Tech und eigene Ideen sorgen
-                dafür, dass die Neugier bleibt.
-              </p>
-            </article>
-          </div>
-        </section>
+          </article>
+          <article class="skill skill-mint reveal" style="--d: 1">
+            <i class="ph ph-rocket-launch" aria-hidden="true"></i>
+            <h3 data-i18n="skills.onboardingTitle">Onboarding & Implementierung</h3>
+            <p data-i18n="skills.onboardingText">Kunden schnell produktiv machen, mit klaren Schritten statt langen Handbüchern.</p>
+          </article>
+          <article class="skill skill-sky reveal" style="--d: 2">
+            <i class="ph ph-chart-line-up" aria-hidden="true"></i>
+            <h3 data-i18n="skills.salesTitle">Upsell & Beratung</h3>
+            <p data-i18n="skills.salesText">Beratungsorientierter Verkauf, der vom Bedarf des Kunden ausgeht.</p>
+          </article>
+          <article class="skill skill-fog reveal" style="--d: 3">
+            <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+            <h3 data-i18n="skills.productTitle">Brücke zum Produktteam</h3>
+            <p data-i18n="skills.productText">Ich übersetze Feedback in priorisierte Verbesserungen, die das Team umsetzt.</p>
+          </article>
+          <article class="skill skill-accent reveal" style="--d: 4">
+            <i class="ph ph-code" aria-hidden="true"></i>
+            <h3 data-i18n="skills.techTitle">Technisch hands-on</h3>
+            <p data-i18n="skills.techText">No-Code, Automationen, AI und leichte Entwicklung. Ich löse Probleme direkt, statt sie nur weiterzugeben.</p>
+          </article>
+        </div>
 
-        <section id="contact" class="section contact reveal">
-          <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
-          <h2 data-i18n="contact.title">Lets work together.</h2>
-          <div class="contact-actions" aria-label="Kontaktlinks">
-            <a
-              class="contact-button primary-contact"
-              href="mailto:ajnunidriton@gmail.com"
-              data-i18n="contact.email"
-              >Email</a
-            >
-            <a
-              class="contact-button secondary-contact"
-              href="https://www.linkedin.com/in/dritonajnuni/"
-              target="_blank"
-              rel="noreferrer"
-              >LinkedIn</a
-            >
+        <div class="toolkit">
+          <div class="tool-filters" role="group" aria-label="Tools filtern">
+            <button type="button" class="tool-filter active" data-filter="all" aria-pressed="true" data-i18n="tools.all">Alle</button>
+            <button type="button" class="tool-filter" data-filter="cs" aria-pressed="false" data-i18n="tools.cs">Customer Success</button>
+            <button type="button" class="tool-filter" data-filter="automation" aria-pressed="false" data-i18n="tools.automation">Automation</button>
+            <button type="button" class="tool-filter" data-filter="backend" aria-pressed="false" data-i18n="tools.backend">Backend & Payments</button>
+            <button type="button" class="tool-filter" data-filter="design" aria-pressed="false" data-i18n="tools.design">Design</button>
+            <button type="button" class="tool-filter" data-filter="ai" aria-pressed="false" data-i18n="tools.ai">AI</button>
+            <button type="button" class="tool-filter" data-filter="dev" aria-pressed="false" data-i18n="tools.dev">Development</button>
           </div>
-        </section>
-      </main>
-    </div>
+          <ul class="tool-wall" aria-label="Tools">
+            <li class="tool" data-cat="cs" style="--i: 0">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/intercom')"><img src="https://cdn.simpleicons.org/intercom" alt="" loading="lazy" /></span>
+              <span class="tool-name">Intercom</span>
+            </li>
+            <li class="tool" data-cat="cs" style="--i: 1">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/zendesk')"><img src="https://cdn.simpleicons.org/zendesk" alt="" loading="lazy" /></span>
+              <span class="tool-name">Zendesk</span>
+            </li>
+            <li class="tool" data-cat="cs" style="--i: 2">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/hubspot')"><img src="https://cdn.simpleicons.org/hubspot" alt="" loading="lazy" /></span>
+              <span class="tool-name">HubSpot</span>
+            </li>
+            <li class="tool" data-cat="automation" style="--i: 3">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/zapier')"><img src="https://cdn.simpleicons.org/zapier" alt="" loading="lazy" /></span>
+              <span class="tool-name">Zapier</span>
+            </li>
+            <li class="tool" data-cat="automation" style="--i: 4">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/make')"><img src="https://cdn.simpleicons.org/make" alt="" loading="lazy" /></span>
+              <span class="tool-name">Make</span>
+            </li>
+            <li class="tool" data-cat="automation" style="--i: 5">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/airtable')"><img src="https://cdn.simpleicons.org/airtable" alt="" loading="lazy" /></span>
+              <span class="tool-name">Airtable</span>
+            </li>
+            <li class="tool" data-cat="automation" style="--i: 6">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/notion')"><img src="https://cdn.simpleicons.org/notion" alt="" loading="lazy" /></span>
+              <span class="tool-name">Notion</span>
+            </li>
+            <li class="tool" data-cat="backend" style="--i: 7">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/supabase')"><img src="https://cdn.simpleicons.org/supabase" alt="" loading="lazy" /></span>
+              <span class="tool-name">Supabase</span>
+            </li>
+            <li class="tool" data-cat="backend" style="--i: 8">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/firebase')"><img src="https://cdn.simpleicons.org/firebase" alt="" loading="lazy" /></span>
+              <span class="tool-name">Firebase</span>
+            </li>
+            <li class="tool" data-cat="backend" style="--i: 9">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/stripe')"><img src="https://cdn.simpleicons.org/stripe" alt="" loading="lazy" /></span>
+              <span class="tool-name">Stripe</span>
+            </li>
+            <li class="tool" data-cat="design" style="--i: 10">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/figma')"><img src="https://cdn.simpleicons.org/figma" alt="" loading="lazy" /></span>
+              <span class="tool-name">Figma</span>
+            </li>
+            <li class="tool" data-cat="design" style="--i: 11">
+              <span class="tool-icon" style="--src: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg')"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="" loading="lazy" /></span>
+              <span class="tool-name">Canva</span>
+            </li>
+            <li class="tool" data-cat="ai" style="--i: 12">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/anthropic')"><img src="https://cdn.simpleicons.org/anthropic" alt="" loading="lazy" /></span>
+              <span class="tool-name">Claude</span>
+            </li>
+            <li class="tool" data-cat="ai" style="--i: 13">
+              <span class="tool-icon" style="--src: url('https://cdn.jsdelivr.net/npm/@lobehub/icons-static-svg@latest/icons/openai.svg')"><img src="https://cdn.jsdelivr.net/npm/@lobehub/icons-static-svg@latest/icons/openai.svg" alt="" loading="lazy" /></span>
+              <span class="tool-name">ChatGPT</span>
+            </li>
+            <li class="tool" data-cat="ai" style="--i: 14">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/googlegemini')"><img src="https://cdn.simpleicons.org/googlegemini" alt="" loading="lazy" /></span>
+              <span class="tool-name">Google AI Studio</span>
+            </li>
+            <li class="tool" data-cat="dev" style="--i: 15">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/react')"><img src="https://cdn.simpleicons.org/react" alt="" loading="lazy" /></span>
+              <span class="tool-name">React</span>
+            </li>
+            <li class="tool" data-cat="dev" style="--i: 16">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/nextdotjs')"><img src="https://cdn.simpleicons.org/nextdotjs" alt="" loading="lazy" /></span>
+              <span class="tool-name">Next.js</span>
+            </li>
+            <li class="tool" data-cat="dev" style="--i: 17">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/expo')"><img src="https://cdn.simpleicons.org/expo" alt="" loading="lazy" /></span>
+              <span class="tool-name">Expo</span>
+            </li>
+            <li class="tool" data-cat="dev" style="--i: 18">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/xcode')"><img src="https://cdn.simpleicons.org/xcode" alt="" loading="lazy" /></span>
+              <span class="tool-name">Xcode</span>
+            </li>
+            <li class="tool" data-cat="dev" style="--i: 19">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/shopify')"><img src="https://cdn.simpleicons.org/shopify" alt="" loading="lazy" /></span>
+              <span class="tool-name">Shopify</span>
+            </li>
+            <li class="tool" data-cat="dev" style="--i: 20">
+              <span class="tool-icon" style="--src: url('https://cdn.simpleicons.org/framer')"><img src="https://cdn.simpleicons.org/framer" alt="" loading="lazy" /></span>
+              <span class="tool-name">Framer</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="about-copy">
+          <h2 data-split data-i18n="about.title">Über mich.</h2>
+          <p class="ink-scroll" data-i18n-html="about.one">Mich motiviert es, wenn Kunden ein Produkt nicht nur bedienen, sondern wirklich verstehen. Deshalb verbinde ich Beziehungsarbeit mit technischem Know-how und <mark>löse Probleme dort, wo sie entstehen.</mark></p>
+          <p class="reveal" data-i18n="about.two">
+            Angefangen habe ich in der Hotellerie in München. Heute lebe ich bei Luzern und arbeite auf Deutsch, Englisch und Albanisch.
+          </p>
+          <ul class="languages reveal" aria-label="Sprachen">
+            <li><strong data-i18n="about.de">Deutsch</strong> <span data-i18n="about.native">Muttersprache</span></li>
+            <li><strong data-i18n="about.sq">Albanisch</strong> <span data-i18n="about.native">Muttersprache</span></li>
+            <li><strong data-i18n="about.en">Englisch</strong> <span data-i18n="about.fluent">Verhandlungssicher</span></li>
+          </ul>
+        </div>
+        <div class="about-notes">
+          <article class="note reveal">
+            <i class="ph ph-lightning" aria-hidden="true"></i>
+            <h3 data-i18n="about.principleTitle">Weniger zerdenken. Mehr ausprobieren.</h3>
+            <p data-i18n="about.principleText">Ich übernehme Verantwortung, teste Ideen früh und mache aus Feedback konkrete Ergebnisse.</p>
+          </article>
+          <article class="note note-run reveal" style="--d: 1">
+            <i class="ph ph-sneaker-move" aria-hidden="true"></i>
+            <h3 data-i18n="about.runTitle">Ultramarathon als Ausgleich.</h3>
+            <p data-i18n="about.runText">Lange Läufe halten den Kopf klar. Dazu kommen Software, AI, Reisen und Bücher.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2 data-split data-i18n="contact.title">Lass uns sprechen.</h2>
+        <p class="section-lead reveal" data-i18n="contact.lead">Ich bin offen für neue Stellen in Customer Success und Account Management. Schreib mir gerne.</p>
+        <div class="contact-actions reveal">
+          <a class="btn btn-primary btn-lg magnetic" href="mailto:ajnunidriton@gmail.com">
+            <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+            ajnunidriton@gmail.com
+          </a>
+          <button class="btn btn-ghost btn-lg copy-email" type="button" data-email="ajnunidriton@gmail.com">
+            <i class="ph ph-copy" aria-hidden="true"></i>
+            <span data-i18n="contact.copy">Kopieren</span>
+          </button>
+          <a class="btn btn-ghost btn-lg" href="https://www.linkedin.com/in/dritonajnuni/" target="_blank" rel="noreferrer">
+            <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+            LinkedIn
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Driton Ajnuni</span>
+      <a href="#top" data-i18n="footer.top">Nach oben</a>
+    </footer>
 
     <script src="script.js" defer></script>
   </body>

@@ -1,131 +1,144 @@
+const root = document.documentElement;
+const nav = document.querySelector(".nav");
 const themeToggle = document.querySelector(".theme-toggle");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 const languageControl = document.querySelector(".language-control");
 const languageToggle = document.querySelector(".language-toggle");
 const languageButtons = document.querySelectorAll("[data-lang]");
-const root = document.documentElement;
-const revealItems = document.querySelectorAll(".reveal");
-const nav = document.querySelector(".nav");
 const navLinks = [...nav.querySelectorAll('nav a[href^="#"]')];
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const translations = {
   de: {
     nav: {
       work: "Projekte",
+      experience: "Erfahrung",
       skills: "Skills",
       about: "Über mich",
       contact: "Kontakt",
     },
     hero: {
-      eyebrow: "Customer Success / Product / AI / Web",
-      title:
-        "Ich verbinde Kundenverständnis, Produktdenken und Umsetzung.",
-      lead: "Ich bin Driton Ajnuni aus Luzern. Im Customer Success begleite ich Kunden produktiv durch Onboarding, Support und Prozesse. Nebenbei baue ich Apps, Websites und Marken, wodurch ich Produkt, Design, AI-Tools und Umsetzung aus eigener Praxis kenne.",
+      eyebrow: "Customer Success Manager in Luzern",
+      title: "Kundenerfolg mit Builder-Mindset.",
+      lead: "7+ Jahre B2B SaaS. Ich betreue 400+ Accounts, halte rund 90 % Renewal Rate und baue nebenbei eigene Produkte.",
       primary: "Projekte ansehen",
-      secondary: "Kontakt aufnehmen",
+      secondary: "Kontakt",
     },
-    profile: {
-      status: "Luzern / Customer Success / Product Builder",
-      title:
-        "Stärken in Support, Produkt und Launches.",
-      text: "Für Arbeitgeber bringe ich Kundenfokus, saubere Kommunikation und die Fähigkeit mit, Ideen schnell in sichtbare Ergebnisse zu verwandeln.",
-    },
-    marquee: {
-      one: "400+ Onboardings",
-      two: "40+ Websites",
-      three: "iOS App Founder",
-      four: "Customer Success",
-      five: "AI Workflows",
-      six: "Deutsch / Englisch / Albanisch",
-      seven: "Schweiz & Deutschland",
+    stats: {
+      accountsTag: "Portfolio",
+      renewalTag: "Retention",
+      revenueTag: "Wachstum",
+      featuresTag: "Produkt",
+      accounts: "B2B-SaaS-Accounts betreut",
+      renewal: "Renewal Rate",
+      revenue: "Account-Umsatz durch Upselling",
+      features: "Features aus Kundenfeedback umgesetzt",
     },
     work: {
-      eyebrow: "Ausgewählte Projekte",
-      title: "Projekte, die zeigen wie ich arbeite",
+      title: "Eigene Projekte.",
+      lead: "Neben dem Job baue ich Produkte selbst, von der Idee bis zum Launch.",
     },
     projects: {
-      button: "Projekt ansehen",
-      soon: "Coming soon",
+      visit: "Ansehen",
+      jobsi: {
+        tag: "Neu · Web App",
+        quote: "„Lohn ist nicht alles. Zum Glück.“",
+        text: "Lohnt sich der Jobwechsel? Jobsi vergleicht zwei Stellen nach Nettolohn, Fahrtkosten, Arbeitszeit und Ferien. Kostenlos und ohne Anmeldung.",
+      },
       imposteri: {
-        tag: "Live · Mobile Game",
-        text: "Ein veröffentlichtes iOS-Spiel mit Social-Mechaniken, Powers und täglicher Motivation. Zeigt meine Stärke, eine Idee bis zum App-Store-Launch zu bringen.",
+        tag: "Live · iOS Game",
+        text: "Ein Party-Game mit Social-Mechaniken und Powers. Design, Entwicklung und App-Store-Launch komplett selbst gemacht.",
+        metric: "Downloads",
       },
       marook: {
-        tag: "Live · AI Learning App",
-        text: "Eine Lern-App, die Bücher, Notizen und Lernkarten verbindet. Hier arbeite ich an AI-gestützten Lernflows, klarer UX und einem echten Nutzen für Nutzer.",
+        tag: "Live · iOS App",
+        text: "Eine Lern-App, die Bücher, Notizen und Lernkarten mit AI-gestützten Lernflows verbindet.",
       },
       sixam: {
-        tag: "Laufend · Web Agency",
-        text: "Mein Web-Projekt für digitale Auftritte. Fokus auf Positionierung, Struktur, Design und Websites, die schnell verständlich machen, wofür eine Marke steht.",
+        tag: "Web Agency",
+        text: "Websites für kleine Unternehmen, vom Verkauf über die Umsetzung bis zum laufenden Support.",
+        metric: "Websites",
       },
       bardhesija: {
         tag: "Eigenmarke · Kosovo",
-        text: "Eine Zahnaufhellungscreme, die ich selbst gebrandet und im Kosovo vermarktet habe. Von der Positionierung bis zur Produktpräsentation habe ich die Marke eigenständig aufgebaut.",
+        text: "Eine Zahnaufhellungscreme, die ich selbst gebrandet und im Kosovo vermarktet habe. Von der Positionierung bis zur Produktpräsentation.",
       },
-      stealth: {
-        tag: "In Arbeit · Bigger Product",
-        text: "Ein größeres Produkt ist in Arbeit. Noch nicht offiziell, aber ein gutes Beispiel dafür, dass ich langfristig denke, validiere und eigene Produktideen weiterentwickle.",
+    },
+    experience: {
+      title: "Erfahrung.",
+      webrebels: {
+        role: "Customer Success Manager",
+        one: "400+ B2B-SaaS-Accounts vom Onboarding bis zur Vertragsverlängerung betreut",
+        two: "Rund 90 % Renewal Rate durch proaktives Account Management und frühes Erkennen gefährdeter Accounts",
+        three: "Account-Umsatz um 45 % gesteigert durch gezieltes Upselling und Cross-Selling",
+        four: "Kundenfeedback mit dem Produktteam priorisiert, 10+ Features daraus umgesetzt",
+      },
+      shore: {
+        role: "Tech Implementation Manager",
+        one: "Direkte Kundenkommunikation in 150+ Website- und Digitalprojekten, vom Kickoff bis zum Launch",
+        two: "40+ responsive Websites und mobile Web-Apps für KMU konzipiert und gebaut",
+        three: "E-Commerce- und Online-Shop-Lösungen als digitalen Vertriebskanal eingerichtet",
+      },
+      picturemaxx: {
+        role: "Business Administration Manager",
+        one: "B2B-Kundenverträge erstellt und verwaltet, interne und externe Projekte koordiniert",
+      },
+      hotel: {
+        role: "Ausbildung Hotelfachmann",
+        one: "Gastgeben von der Pike auf gelernt. Bis heute die Basis für meinen Umgang mit Kunden.",
       },
     },
     skills: {
-      eyebrow: "Was ich mitbringe",
-      title: "Meine Stärken auf einen Blick.",
-      lead: "Arbeitgeber sollen sofort sehen: Ich kann mit Kunden umgehen, Produkte erklären, Probleme strukturieren und digitale Lösungen praktisch umsetzen.",
-      customerTitle: "Customer Success",
-      customerText:
-        "Onboardings, Support, Schulungen und klare Kommunikation mit Kunden. Ich übersetze Funktionen in echten Nutzen.",
-      productTitle: "Produkt & Prozesse",
-      productText:
-        "Ich erkenne wiederkehrende Probleme, strukturiere Abläufe und denke in einfachen Lösungen statt komplizierten Umwegen.",
-      buildTitle: "Web, Apps & Launches",
-      buildText:
-        "40+ Websites, eigene iOS-Apps und laufende Brands. Ich kann Ideen nicht nur planen, sondern auch sichtbar machen.",
-      aiTitle: "AI & moderne Tools",
-      aiText:
-        "Ich nutze AI-Tools für Recherche, Content, Prototyping und schnellere Workflows, ohne den praktischen Blick zu verlieren.",
-      proofOne: "400+ Kunden onboarded",
-      proofTwo: "40+ Websites umgesetzt",
-      proofThree: "2 iOS-Apps veröffentlicht",
-      proofFour: "3 Sprachen im Alltag",
+      title: "Was ich mitbringe.",
+      csTitle: "Customer Success & Retention",
+      csText: "Account Management über den ganzen Lebenszyklus. Ich erkenne Risiken früh und mache aus Kunden langfristige Partner.",
+      onboardingTitle: "Onboarding & Implementierung",
+      onboardingText: "Kunden schnell produktiv machen, mit klaren Schritten statt langen Handbüchern.",
+      salesTitle: "Upsell & Beratung",
+      salesText: "Beratungsorientierter Verkauf, der vom Bedarf des Kunden ausgeht.",
+      productTitle: "Brücke zum Produktteam",
+      productText: "Ich übersetze Feedback in priorisierte Verbesserungen, die das Team umsetzt.",
+      techTitle: "Technisch hands-on",
+      techText: "No-Code, Automationen, AI und leichte Entwicklung. Ich löse Probleme direkt, statt sie nur weiterzugeben.",
     },
     tools: {
-      eyebrow: "Programme & Tools",
-      title: "Womit ich arbeite.",
-      lead: "Ein ausgewähltes Toolkit für Kunden, Produkte und digitale Ideen.",
-      csm: "Customer Success",
-      backend: "Backend & Daten",
-      web: "Web & Build",
+      all: "Alle",
+      cs: "Customer Success",
+      automation: "Automation",
+      backend: "Backend & Payments",
+      design: "Design",
       ai: "AI",
-      design: "Design & Content",
-      workspace: "Workflows",
+      dev: "Development",
     },
     about: {
-      eyebrow: "Über mich",
-      title:
-        "Ich mache komplexe Produkte verständlich und baue eigene Ideen von null auf.",
-      one: "Bei Belbo arbeite ich im Customer Success und habe über 400 Kunden onboarded. Am meisten motiviert mich, wenn Menschen ein Produkt nicht nur bedienen, sondern wirklich verstehen und daraus echten Nutzen ziehen.",
-      two: "Ich halte Dinge gerne einfach: Prozesse, Kommunikation und Tools sollen klar sein. Neben der Arbeit baue ich eigene Projekte, habe über 40 Websites umgesetzt und mit Imposteri und Marook zwei eigene iOS-Apps im App Store veröffentlicht.",
-      statOne: "Kunden onboarded",
-      statTwo: "Websites gebaut",
-      statThree: "Sprachen",
-      statFour: "Erfahrung in der Schweiz und Deutschland",
-      principleLabel: "Mein Prinzip",
+      title: "Über mich.",
+      one: "Mich motiviert es, wenn Kunden ein Produkt nicht nur bedienen, sondern wirklich verstehen. Deshalb verbinde ich Beziehungsarbeit mit technischem Know-how und <mark>löse Probleme dort, wo sie entstehen.</mark>",
+      two: "Angefangen habe ich in der Hotellerie in München. Heute lebe ich bei Luzern und arbeite auf Deutsch, Englisch und Albanisch.",
+      de: "Deutsch",
+      sq: "Albanisch",
+      en: "Englisch",
+      native: "Muttersprache",
+      fluent: "Verhandlungssicher",
       principleTitle: "Weniger zerdenken. Mehr ausprobieren.",
-      noteOne:
-        "Ich übernehme Verantwortung, teste Ideen früh und entwickle aus Feedback konkrete Ergebnisse.",
-      balanceLabel: "Abseits vom Screen",
-      balanceTitle: "Bewegung hält den Kopf klar.",
-      noteTwo:
-        "Im Gym finde ich Ausgleich. Neue Tech und eigene Ideen sorgen dafür, dass die Neugier bleibt.",
+      principleText: "Ich übernehme Verantwortung, teste Ideen früh und mache aus Feedback konkrete Ergebnisse.",
+      runTitle: "Ultramarathon als Ausgleich.",
+      runText: "Lange Läufe halten den Kopf klar. Dazu kommen Software, AI, Reisen und Bücher.",
     },
     contact: {
-      eyebrow: "Kontakt",
-      title: "Lets work together.",
-      email: "Email",
+      title: "Lass uns sprechen.",
+      lead: "Ich bin offen für neue Stellen in Customer Success und Account Management. Schreib mir gerne.",
+      copy: "Kopieren",
+      copied: "Kopiert",
     },
+    status: {
+      long: "Offen für neue Stellen in Customer Success & Account Management",
+      short: "Offen für neue Stellen",
+      pill: "Offen für Stellen",
+    },
+    footer: { top: "Nach oben" },
     aria: {
       menuOpen: "Menü öffnen",
-      menuClose: "Menü schließen",
+      menuClose: "Menü schliessen",
       language: "Sprache wechseln",
       themeDark: "Dunkelmodus aktivieren",
       themeLight: "Hellmodus aktivieren",
@@ -134,117 +147,130 @@ const translations = {
   en: {
     nav: {
       work: "Projects",
+      experience: "Experience",
       skills: "Skills",
-      about: "About me",
+      about: "About",
       contact: "Contact",
     },
     hero: {
-      eyebrow: "Customer Success / Product / AI / Web",
-      title:
-        "I connect customer understanding, product thinking and execution.",
-      lead: "I am Driton Ajnuni from Lucerne. In Customer Success, I guide customers through onboarding, support and processes. On the side, I build apps, websites and brands, which gives me hands-on experience across product, design, AI tools and execution.",
+      eyebrow: "Customer Success Manager in Lucerne",
+      title: "Customer success with a builder's mindset.",
+      lead: "7+ years in B2B SaaS. I manage 400+ accounts, hold a ~90% renewal rate and build my own products on the side.",
       primary: "View projects",
-      secondary: "Get in touch",
+      secondary: "Contact",
     },
-    profile: {
-      status: "Lucerne / Customer Success / Product Builder",
-      title:
-        "Strengths in support, product and launches.",
-      text: "For employers, I bring customer focus, clear communication and the ability to turn ideas into visible results quickly.",
-    },
-    marquee: {
-      one: "400+ onboardings",
-      two: "40+ websites",
-      three: "iOS app founder",
-      four: "Customer Success",
-      five: "AI workflows",
-      six: "German / English / Albanian",
-      seven: "Switzerland & Germany",
+    stats: {
+      accountsTag: "Portfolio",
+      renewalTag: "Retention",
+      revenueTag: "Growth",
+      featuresTag: "Product",
+      accounts: "B2B SaaS accounts managed",
+      renewal: "Renewal rate",
+      revenue: "Account revenue through upselling",
+      features: "Features shipped from customer feedback",
     },
     work: {
-      eyebrow: "Selected projects",
-      title: "Projects that show how I work",
+      title: "Own projects.",
+      lead: "Outside my job, I build products myself, from idea to launch.",
     },
     projects: {
-      button: "View project",
-      soon: "Coming soon",
+      visit: "Visit",
+      jobsi: {
+        tag: "New · Web App",
+        quote: "“Salary isn't everything. Luckily.”",
+        text: "Is the job change worth it? Jobsi compares two positions by net salary, commuting costs, working hours and vacation. Free, no sign-up.",
+      },
       imposteri: {
-        tag: "Live · Mobile Game",
-        text: "A published iOS game with social mechanics, powers and daily motivation. It shows my ability to bring an idea all the way to an App Store launch.",
+        tag: "Live · iOS Game",
+        text: "A party game with social mechanics and powers. Design, development and App Store launch, all done by me.",
+        metric: "Downloads",
       },
       marook: {
-        tag: "Live · AI Learning App",
-        text: "A learning app that connects books, notes and flashcards. I am working on AI-supported learning flows, clear UX and real user value.",
+        tag: "Live · iOS App",
+        text: "A learning app that connects books, notes and flashcards with AI-supported learning flows.",
       },
       sixam: {
-        tag: "Ongoing · Web Agency",
-        text: "My web project for digital presences. Focused on positioning, structure, design and websites that quickly communicate what a brand stands for.",
+        tag: "Web Agency",
+        text: "Websites for small businesses, from sales through delivery to ongoing support.",
+        metric: "Websites",
       },
       bardhesija: {
         tag: "Own Brand · Kosovo",
-        text: "A teeth-whitening cream that I branded and marketed myself in Kosovo. I built the brand independently, from positioning to product presentation.",
+        text: "A teeth-whitening cream I branded and marketed myself in Kosovo. From positioning to product presentation.",
       },
-      stealth: {
-        tag: "In Progress · Bigger Product",
-        text: "A larger product is in progress. It is not official yet, but it shows that I think long term, validate ideas and keep developing my own products.",
+    },
+    experience: {
+      title: "Experience.",
+      webrebels: {
+        role: "Customer Success Manager",
+        one: "Managed 400+ B2B SaaS accounts from onboarding through renewal",
+        two: "~90% renewal rate through proactive account management and early identification of at-risk accounts",
+        three: "Grew account revenue 45% through targeted upselling and cross-selling",
+        four: "Prioritized customer feedback with the product team; 10+ features shipped",
+      },
+      shore: {
+        role: "Tech Implementation Manager",
+        one: "Owned customer communication across 150+ website and digital projects, from kickoff to launch",
+        two: "Designed and built 40+ responsive websites and mobile web apps for SMBs",
+        three: "Set up e-commerce and online shop solutions as a digital sales channel",
+      },
+      picturemaxx: {
+        role: "Business Administration Manager",
+        one: "Created and managed B2B customer contracts, coordinated internal and external projects",
+      },
+      hotel: {
+        role: "Apprenticeship, Hotel Management",
+        one: "Learned hospitality from the ground up. Still the foundation of how I work with customers.",
       },
     },
     skills: {
-      eyebrow: "What I bring",
-      title: "My strengths at a glance.",
-      lead: "Employers should see it immediately: I can work with customers, explain products, structure problems and turn digital ideas into practical solutions.",
-      customerTitle: "Customer Success",
-      customerText:
-        "Onboarding, support, training and clear communication with customers. I translate features into real value.",
-      productTitle: "Product & Processes",
-      productText:
-        "I spot recurring problems, structure workflows and think in simple solutions instead of complicated detours.",
-      buildTitle: "Web, Apps & Launches",
-      buildText:
-        "40+ websites, own iOS apps and ongoing brands. I can do more than plan ideas; I can make them visible.",
-      aiTitle: "AI & Modern Tools",
-      aiText:
-        "I use AI tools for research, content, prototyping and faster workflows while keeping a practical view.",
-      proofOne: "400+ customers onboarded",
-      proofTwo: "40+ websites delivered",
-      proofThree: "2 iOS apps published",
-      proofFour: "3 languages day to day",
+      title: "What I bring.",
+      csTitle: "Customer Success & Retention",
+      csText: "Account management across the full lifecycle. I spot risks early and turn customers into long-term partners.",
+      onboardingTitle: "Onboarding & Implementation",
+      onboardingText: "Getting customers productive fast, with clear steps instead of long manuals.",
+      salesTitle: "Upsell & Consulting",
+      salesText: "Consultative selling that starts from what the customer actually needs.",
+      productTitle: "Bridge to Product",
+      productText: "I translate feedback into prioritized improvements the team ships.",
+      techTitle: "Technically hands-on",
+      techText: "No-code, automation, AI and light development. I solve problems directly instead of passing them on.",
     },
     tools: {
-      eyebrow: "Programs & Tools",
-      title: "What I work with.",
-      lead: "A focused toolkit for customers, products and digital ideas.",
-      csm: "Customer Success",
-      backend: "Backend & Data",
-      web: "Web & Build",
+      all: "All",
+      cs: "Customer Success",
+      automation: "Automation",
+      backend: "Backend & Payments",
+      design: "Design",
       ai: "AI",
-      design: "Design & Content",
-      workspace: "Workflows",
+      dev: "Development",
     },
     about: {
-      eyebrow: "About me",
-      title:
-        "I make complex products understandable and build my own ideas from zero.",
-      one: "At Belbo, I work in Customer Success and have onboarded over 400 customers. What motivates me most is when people do not just use a product, but truly understand it and get real value from it.",
-      two: "I like keeping things simple: processes, communication and tools should be clear. On the side, I build my own projects, have created over 40 websites and launched my own iOS apps, Imposteri and Marook, on the App Store.",
-      statOne: "customers onboarded",
-      statTwo: "websites built",
-      statThree: "languages",
-      statFour: "experience in Switzerland and Germany",
-      principleLabel: "My principle",
+      title: "About me.",
+      one: "What motivates me is when customers don't just use a product but truly understand it. That's why I combine relationship work with technical know-how and <mark>solve problems where they start.</mark>",
+      two: "I started out in hospitality in Munich. Today I live near Lucerne and work in German, English and Albanian.",
+      de: "German",
+      sq: "Albanian",
+      en: "English",
+      native: "Native",
+      fluent: "Professional",
       principleTitle: "Think less. Test more.",
-      noteOne:
-        "I take ownership, test ideas early and turn feedback into concrete results.",
-      balanceLabel: "Away from the screen",
-      balanceTitle: "Movement keeps my mind clear.",
-      noteTwo:
-        "The gym gives me balance. New technology and personal ideas keep me curious.",
+      principleText: "I take ownership, test ideas early and turn feedback into concrete results.",
+      runTitle: "Ultramarathons for balance.",
+      runText: "Long runs keep my mind clear. Add software, AI, travel and books.",
     },
     contact: {
-      eyebrow: "Contact",
-      title: "Lets work together.",
-      email: "Email",
+      title: "Let's talk.",
+      lead: "I'm open to new roles in customer success and account management. Feel free to reach out.",
+      copy: "Copy",
+      copied: "Copied",
     },
+    status: {
+      long: "Open to new roles in Customer Success & Account Management",
+      short: "Open to new roles",
+      pill: "Open to work",
+    },
+    footer: { top: "Back to top" },
     aria: {
       menuOpen: "Open menu",
       menuClose: "Close menu",
@@ -255,101 +281,149 @@ const translations = {
   },
 };
 
-const getTranslation = (language, key) =>
-  key
-    .split(".")
-    .reduce((value, part) => value && value[part], translations[language]);
-
-const syncLanguageControls = (dictionary) => {
-  languageToggle.textContent = dictionary.toUpperCase();
-  languageToggle.setAttribute(
-    "aria-label",
-    `${dictionary.toUpperCase()} ${translations[dictionary].aria.language}`,
-  );
-  languageButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.lang === dictionary);
-  });
-
-  const menuIsOpen = nav.classList.contains("open");
-  mobileNavToggle.setAttribute(
-    "aria-label",
-    menuIsOpen
-      ? translations[dictionary].aria.menuClose
-      : translations[dictionary].aria.menuOpen,
-  );
-  themeToggle.setAttribute(
-    "aria-label",
-    root.getAttribute("data-theme") === "dark"
-      ? translations[dictionary].aria.themeLight
-      : translations[dictionary].aria.themeDark,
-  );
+const storage = {
+  get(key) {
+    try { return localStorage.getItem(key); } catch { return null; }
+  },
+  set(key, value) {
+    try { localStorage.setItem(key, value); } catch { /* storage unavailable */ }
+  },
 };
 
+const t = (key, language = root.lang || "de") =>
+  key.split(".").reduce((value, part) => value && value[part], translations[language]);
+
+/* Word-by-word headline reveal */
+const splitWords = (element) => {
+  const words = element.textContent.trim().split(/\s+/);
+  element.setAttribute("aria-label", words.join(" "));
+  element.innerHTML = words
+    .map((word, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${word}</span></span>`)
+    .join(" ");
+};
+
+const splitTargets = () => document.querySelectorAll("[data-split]");
+
+/* Scroll-inked paragraph: words darken as it moves through the viewport */
+const wrapInk = (element) => {
+  let index = 0;
+  const wrap = (node) => {
+    [...node.childNodes].forEach((child) => {
+      if (child.nodeType === Node.ELEMENT_NODE) return wrap(child);
+      const fragment = document.createDocumentFragment();
+      child.textContent.split(/(\s+)/).forEach((part) => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) return fragment.append(part);
+        const span = document.createElement("span");
+        span.className = "ink";
+        span.style.setProperty("--i", index++);
+        span.textContent = part;
+        fragment.append(span);
+      });
+      child.replaceWith(fragment);
+    });
+  };
+  wrap(element);
+  element.style.setProperty("--n", index);
+};
+
+/* Brief letter scramble on the last headline word */
+const scramble = (element) => {
+  const word = element.querySelector(".w:last-child > span");
+  if (!word || reduceMotion) return;
+  const finalText = word.textContent;
+  const glyphs = "abcdefghijklmnopqrstuvwxyz";
+  const steps = 14;
+  let frame = 0;
+  // Lock the word's box so wider random glyphs can't reflow the line
+  word.style.width = `${word.getBoundingClientRect().width}px`;
+  word.style.whiteSpace = "nowrap";
+  word.classList.add("scrambling");
+  const timer = setInterval(() => {
+    frame++;
+    const settled = Math.floor((frame / steps) * finalText.length);
+    word.textContent = [...finalText]
+      .map((char, i) => (i < settled || /[\s.\-']/.test(char) ? char : glyphs[Math.floor(Math.random() * glyphs.length)]))
+      .join("");
+    if (frame >= steps) {
+      clearInterval(timer);
+      word.textContent = finalText;
+      word.style.width = "";
+      word.style.whiteSpace = "";
+      word.classList.remove("scrambling");
+    }
+  }, 55);
+};
+
+/* Language */
+const syncLanguageControls = (language) => {
+  languageToggle.textContent = language.toUpperCase();
+  languageToggle.setAttribute("aria-label", `${language.toUpperCase()} ${t("aria.language", language)}`);
+  languageButtons.forEach((button) => button.classList.toggle("active", button.dataset.lang === language));
+  mobileNavToggle.setAttribute("aria-label", t(nav.classList.contains("open") ? "aria.menuClose" : "aria.menuOpen", language));
+  themeToggle.setAttribute("aria-label", t(root.dataset.theme === "dark" ? "aria.themeLight" : "aria.themeDark", language));
+};
+
+const applyLanguage = (language) => {
+  const dictionary = translations[language] ? language : "de";
+  const shouldTranslate = root.lang !== dictionary;
+  root.lang = dictionary;
+  storage.set("language", dictionary);
+
+  if (shouldTranslate) {
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const value = t(element.dataset.i18n, dictionary);
+      if (value) element.textContent = value;
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+      const value = t(element.dataset.i18nHtml, dictionary);
+      if (value) element.innerHTML = value;
+    });
+  }
+
+  splitTargets().forEach(splitWords);
+  document.querySelectorAll(".ink-scroll").forEach((element) => {
+    if (!element.querySelector(".ink")) wrapInk(element);
+  });
+  syncLanguageControls(dictionary);
+};
+
+/* Theme */
+const setTheme = (theme) => {
+  root.dataset.theme = theme;
+  storage.set("theme", theme);
+  document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#0b0d12" : "#f6f7f9";
+  syncLanguageControls(root.lang || "de");
+};
+
+themeToggle.addEventListener("click", (event) => {
+  const next = root.dataset.theme === "dark" ? "light" : "dark";
+  if (!document.startViewTransition || reduceMotion) {
+    setTheme(next);
+    return;
+  }
+  const x = event.clientX || window.innerWidth - 40;
+  const y = event.clientY || 40;
+  const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+  document.startViewTransition(() => setTheme(next)).ready.then(() => {
+    root.animate(
+      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+      { duration: 650, easing: "cubic-bezier(.16, 1, .3, 1)", pseudoElement: "::view-transition-new(root)" },
+    );
+  });
+});
+
+/* Menus */
 const closeMobileMenu = () => {
   nav.classList.remove("open");
   mobileNavToggle.setAttribute("aria-expanded", "false");
-  mobileNavToggle.setAttribute(
-    "aria-label",
-    translations[root.lang || "de"].aria.menuOpen,
-  );
+  mobileNavToggle.setAttribute("aria-label", t("aria.menuOpen"));
 };
 
 const closeLanguageMenu = () => {
   languageControl.classList.remove("open");
   languageToggle.setAttribute("aria-expanded", "false");
 };
-
-const applyLanguage = (language) => {
-  const dictionary = translations[language] ? language : "de";
-  const shouldTranslateDom = root.lang !== dictionary;
-  root.lang = dictionary;
-  localStorage.setItem("language", dictionary);
-
-  if (shouldTranslateDom) {
-    document.querySelectorAll("[data-i18n]").forEach((element) => {
-      const value = getTranslation(dictionary, element.dataset.i18n);
-      if (value) element.textContent = value;
-    });
-
-    document.querySelectorAll("[data-i18n-html]").forEach((element) => {
-      const value = getTranslation(dictionary, element.dataset.i18nHtml);
-      if (value) element.innerHTML = value;
-    });
-  }
-
-  syncLanguageControls(dictionary);
-};
-
-const updateThemeUI = (theme) => {
-  root.setAttribute("data-theme", theme);
-  const isDark = theme === "dark";
-  themeToggle.dataset.theme = theme;
-  themeToggle.setAttribute(
-    "aria-label",
-    isDark
-      ? translations[root.lang || "de"].aria.themeLight
-      : translations[root.lang || "de"].aria.themeDark,
-  );
-};
-
-const getPreferredTheme = () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light" || savedTheme === "dark") return savedTheme;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-
-const setTheme = (theme) => {
-  updateThemeUI(theme);
-  localStorage.setItem("theme", theme);
-};
-
-themeToggle.addEventListener("click", () => {
-  const nextTheme =
-    root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  setTheme(nextTheme);
-});
 
 languageToggle.addEventListener("click", () => {
   const isOpen = languageControl.classList.toggle("open");
@@ -360,6 +434,7 @@ languageToggle.addEventListener("click", () => {
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
     applyLanguage(button.dataset.lang);
+    revealSplitInView();
     closeLanguageMenu();
   });
 });
@@ -368,28 +443,14 @@ mobileNavToggle.addEventListener("click", () => {
   closeLanguageMenu();
   const isOpen = nav.classList.toggle("open");
   mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
-  mobileNavToggle.setAttribute(
-    "aria-label",
-    isOpen
-      ? translations[root.lang || "de"].aria.menuClose
-      : translations[root.lang || "de"].aria.menuOpen,
-  );
+  mobileNavToggle.setAttribute("aria-label", t(isOpen ? "aria.menuClose" : "aria.menuOpen"));
 });
 
-nav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    if (nav.classList.contains("open")) closeMobileMenu();
-  });
-});
+navLinks.forEach((link) => link.addEventListener("click", closeMobileMenu));
 
 document.addEventListener("click", (event) => {
-  if (!nav.contains(event.target) && nav.classList.contains("open"))
-    closeMobileMenu();
-  if (
-    !languageControl.contains(event.target) &&
-    languageControl.classList.contains("open")
-  )
-    closeLanguageMenu();
+  if (!nav.contains(event.target)) closeMobileMenu();
+  if (!languageControl.contains(event.target)) closeLanguageMenu();
 });
 
 document.addEventListener("keydown", (event) => {
@@ -399,45 +460,188 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-setTheme(getPreferredTheme());
-applyLanguage(localStorage.getItem("language") || "de");
+/* Init */
+setTheme(storage.get("theme") === "dark" ? "dark" : "light");
+applyLanguage(storage.get("language") || "de");
 
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  revealItems.forEach((item) => item.classList.add("show"));
+/* Toolkit filter: light up matching tools in brand color, dim the rest */
+const toolWall = document.querySelector(".tool-wall");
+const toolTiles = [...toolWall.querySelectorAll(".tool")];
+const toolFilters = document.querySelectorAll(".tool-filter");
+toolFilters.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    toolFilters.forEach((other) => {
+      other.classList.toggle("active", other === button);
+      other.setAttribute("aria-pressed", String(other === button));
+    });
+    toolTiles.forEach((tile) => {
+      const match = filter === "all" || tile.dataset.cat === filter;
+      tile.classList.toggle("lit", filter !== "all" && match);
+      tile.classList.toggle("dim", !match);
+    });
+  });
+});
+
+/* Nav background after leaving the top */
+new IntersectionObserver(([entry]) => {
+  nav.classList.toggle("scrolled", !entry.isIntersecting);
+  root.classList.toggle("is-scrolled", !entry.isIntersecting);
+}).observe(
+  document.querySelector(".nav-sentinel"),
+);
+
+/* Count-up numbers */
+const countUp = (element) => {
+  const target = Number(element.dataset.to);
+  if (reduceMotion) return;
+  const start = performance.now();
+  const duration = 1600;
+  const tick = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    element.textContent = Math.round(target * (1 - Math.pow(1 - progress, 4)));
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+  element.textContent = "0";
+  requestAnimationFrame(tick);
+};
+
+/* Scroll reveals */
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-in");
+      entry.target.querySelectorAll(".count").forEach(countUp);
+      revealObserver.unobserve(entry.target);
+    });
+  },
+  { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+);
+
+const revealSplitInView = () => {
+  splitTargets().forEach((element) => {
+    if (element.classList.contains("is-in")) return;
+    revealObserver.observe(element);
+  });
+};
+
+const revealTargets = document.querySelectorAll(".reveal, [data-split], .stats, .tool-wall");
+if (reduceMotion) {
+  revealTargets.forEach((item) => item.classList.add("is-in"));
 } else {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.14, rootMargin: "0px 0px -6% 0px" },
-  );
-  revealItems.forEach((item) => observer.observe(item));
+  revealTargets.forEach((item) => revealObserver.observe(item));
+  setTimeout(() => document.querySelectorAll("[data-scramble]").forEach(scramble), 900);
 }
 
-const observedSections = navLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
+/* Drive --progress on inked paragraphs only while they are on screen */
+const inkParagraphs = new Set();
+const inkLoop = () => {
+  inkParagraphs.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    const start = window.innerHeight * 0.88;
+    const end = window.innerHeight * 0.4;
+    const progress = Math.min(Math.max((start - rect.top) / (start - end), 0), 1);
+    element.style.setProperty("--progress", progress.toFixed(3));
+    element.classList.toggle("marked", progress >= 0.98);
+  });
+  if (inkParagraphs.size) requestAnimationFrame(inkLoop);
+};
+const inkObserver = new IntersectionObserver((entries) => {
+  const wasIdle = inkParagraphs.size === 0;
+  entries.forEach((entry) => (entry.isIntersecting ? inkParagraphs.add(entry.target) : inkParagraphs.delete(entry.target)));
+  if (wasIdle && inkParagraphs.size) requestAnimationFrame(inkLoop);
+});
+document.querySelectorAll(".ink-scroll").forEach((element) => {
+  if (reduceMotion) element.classList.add("marked");
+  else {
+    element.style.setProperty("--progress", 0);
+    inkObserver.observe(element);
+  }
+});
 
-if (observedSections.length) {
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (!visible) return;
+/* Pointer effects: card spotlight and magnetic buttons */
+if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
+  document.querySelectorAll(".card").forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+      card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+    });
+  });
+
+  document.querySelectorAll(".magnetic").forEach((button) => {
+    button.addEventListener("pointermove", (event) => {
+      const rect = button.getBoundingClientRect();
+      const x = (event.clientX - rect.left - rect.width / 2) * 0.18;
+      const y = (event.clientY - rect.top - rect.height / 2) * 0.3;
+      button.style.translate = `${x}px ${y}px`;
+    });
+    button.addEventListener("pointerleave", () => {
+      button.style.translate = "";
+    });
+  });
+}
+
+/* Logo wall: tools lean gently toward the pointer */
+if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
+  let pointer = null;
+  let frame = 0;
+  const pull = () => {
+    frame = 0;
+    toolTiles.forEach((tile) => {
+      const rect = tile.getBoundingClientRect();
+      if (!pointer) {
+        tile.style.setProperty("--tx", "0px");
+        tile.style.setProperty("--ty", "0px");
+        return;
+      }
+      const dx = pointer.x - (rect.left + rect.width / 2);
+      const dy = pointer.y - (rect.top + rect.height / 2);
+      const strength = Math.max(0, 1 - Math.hypot(dx, dy) / 260) * 0.09;
+      tile.style.setProperty("--tx", `${(dx * strength).toFixed(1)}px`);
+      tile.style.setProperty("--ty", `${(dy * strength).toFixed(1)}px`);
+    });
+  };
+  const schedule = () => { if (!frame) frame = requestAnimationFrame(pull); };
+  toolWall.addEventListener("pointermove", (event) => { pointer = { x: event.clientX, y: event.clientY }; schedule(); });
+  toolWall.addEventListener("pointerleave", () => { pointer = null; schedule(); });
+}
+new MutationObserver(() => {
+  if (toolWall.classList.contains("is-in")) setTimeout(() => toolWall.classList.add("settled"), toolTiles.length * 30 + 800);
+}).observe(toolWall, { attributeFilter: ["class"] });
+
+/* Copy email */
+const copyButton = document.querySelector(".copy-email");
+copyButton.addEventListener("click", async () => {
+  const label = copyButton.querySelector("span");
+  try {
+    await navigator.clipboard.writeText(copyButton.dataset.email);
+    copyButton.classList.add("copied");
+    label.textContent = t("contact.copied");
+    setTimeout(() => {
+      copyButton.classList.remove("copied");
+      label.textContent = t("contact.copy");
+    }, 1800);
+  } catch {
+    window.location.href = `mailto:${copyButton.dataset.email}`;
+  }
+});
+
+/* Active nav link */
+const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+const navObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
       navLinks.forEach((link) => {
-        const isActive = link.getAttribute("href") === `#${visible.target.id}`;
-        link.classList.toggle("active", isActive);
+        const isActive = link.getAttribute("href") === `#${entry.target.id}`;
+        link.classList.toggle("active", isActive && !link.classList.contains("nav-cta"));
         if (isActive) link.setAttribute("aria-current", "location");
         else link.removeAttribute("aria-current");
       });
-    },
-    { rootMargin: "-28% 0px -58% 0px", threshold: [0, 0.25, 0.6] },
-  );
-  observedSections.forEach((section) => navObserver.observe(section));
-}
+    });
+  },
+  { rootMargin: "-45% 0px -50% 0px" },
+);
+sections.forEach((section) => navObserver.observe(section));
