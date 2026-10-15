@@ -611,6 +611,65 @@ new MutationObserver(() => {
   if (toolWall.classList.contains("is-in")) setTimeout(() => toolWall.classList.add("settled"), toolTiles.length * 30 + 800);
 }).observe(toolWall, { attributeFilter: ["class"] });
 
+/* Mobile: hero portrait shrinks and flies into the nav avatar slot while scrolling */
+const flyMedia = window.matchMedia("(max-width: 900px)");
+const heroVisual = document.querySelector(".hero-visual");
+const navAvatar = document.querySelector(".logo-image");
+if (!reduceMotion && heroVisual && navAvatar) {
+  let geometry = null;
+  let flyFrame = 0;
+  let heroOnScreen = true;
+
+  const measure = () => {
+    heroVisual.style.transform = "";
+    const portrait = heroVisual.getBoundingClientRect();
+    const navRect = nav.getBoundingClientRect();
+    // Final nav state: fixed at top 10px, avatar offset inside the nav
+    const targetTop = 10 + nav.clientTop + navAvatar.offsetTop;
+    const targetLeft = navRect.left + nav.clientLeft + navAvatar.offsetLeft;
+    const startTop = portrait.top + window.scrollY;
+    geometry = {
+      distance: Math.max(startTop - targetTop, 1),
+      dx: targetLeft - portrait.left,
+      scale: navAvatar.offsetWidth / heroVisual.querySelector(".portrait").offsetWidth,
+    };
+  };
+
+  const fly = () => {
+    flyFrame = 0;
+    if (!flyMedia.matches) return;
+    if (!geometry) measure();
+    const progress = Math.min(Math.max(window.scrollY / geometry.distance, 0), 1);
+    const eased = 1 - Math.pow(1 - progress, 2);
+    const scale = 1 - (1 - geometry.scale) * eased;
+    heroVisual.style.transform = `translateX(${(geometry.dx * eased).toFixed(2)}px) scale(${scale.toFixed(4)})`;
+    root.classList.toggle("logo-docked", progress >= 1);
+    root.classList.toggle("logo-flying", progress > 0 && progress < 1 && !nav.classList.contains("open"));
+    if (heroOnScreen) flyFrame = requestAnimationFrame(fly);
+  };
+
+  const enable = () => {
+    if (flyMedia.matches) {
+      root.classList.add("js-fly");
+      geometry = null;
+      if (!flyFrame) flyFrame = requestAnimationFrame(fly);
+    } else {
+      root.classList.remove("js-fly", "logo-docked");
+      heroVisual.style.transform = "";
+    }
+  };
+
+  new IntersectionObserver(([entry]) => {
+    heroOnScreen = entry.isIntersecting;
+    if (heroOnScreen && !flyFrame) flyFrame = requestAnimationFrame(fly);
+    if (!heroOnScreen) root.classList.add("logo-docked");
+  }).observe(document.querySelector(".hero"));
+
+  flyMedia.addEventListener("change", enable);
+  window.addEventListener("resize", () => { geometry = null; });
+  enable();
+}
+
 /* Copy email */
 const copyButton = document.querySelector(".copy-email");
 copyButton.addEventListener("click", async () => {

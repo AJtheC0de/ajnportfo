@@ -1053,6 +1053,12 @@ h1[data-split] .w > span { transition-delay: calc(var(--i) * 70ms + 200ms); }
   .hero-visual { justify-self: start; max-width: 340px; order: -1; }
   .portrait { aspect-ratio: 1; border-radius: 50%; width: 132px; }
   .hero .portrait { clip-path: none; animation: rise .9s var(--ease) both; opacity: 0; }
+  /* Mobile: the portrait flies into the nav, so the nav avatar starts hidden */
+  .hero-visual { transform-origin: 0 0; will-change: transform; }
+  .js-fly .logo picture { opacity: 0; transition: opacity .15s; }
+  .js-fly.logo-docked .logo picture { opacity: 1; }
+  .js-fly.logo-docked .hero-visual { visibility: hidden; }
+  .js-fly.logo-flying .hero-visual { z-index: 51; }
   h1 { max-width: 12ch; }
 
   .stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
