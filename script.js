@@ -41,14 +41,18 @@ const translations = {
     projects: {
       visit: "Ansehen",
       jobsi: {
-        tag: "Neu · Web App",
-        quote: "„Lohn ist nicht alles. Zum Glück.“",
+        tag: "Live · Web App",
         text: "Lohnt sich der Jobwechsel? Jobsi vergleicht zwei Stellen nach Nettolohn, Fahrtkosten, Arbeitszeit und Ferien. Kostenlos und ohne Anmeldung.",
       },
       imposteri: {
         tag: "Live · iOS Game",
         text: "Ein Party-Game mit Social-Mechaniken und Powers. Design, Entwicklung und App-Store-Launch komplett selbst gemacht.",
         metric: "Downloads",
+      },
+      jobply: {
+        tag: "Neu · Web App",
+        quote: "„Bewerbungen im Griff. Kopf frei.“",
+        text: "Dein Bewerbungs-Tracker: Jobply begleitet jede Bewerbung vom Versand bis zur Zusage, importiert Stelleninserate und hilft dir mit AI bei der Interview-Vorbereitung.",
       },
       marook: {
         tag: "Live · iOS App",
@@ -176,14 +180,18 @@ const translations = {
     projects: {
       visit: "Visit",
       jobsi: {
-        tag: "New · Web App",
-        quote: "“Salary isn't everything. Luckily.”",
+        tag: "Live · Web App",
         text: "Is the job change worth it? Jobsi compares two positions by net salary, commuting costs, working hours and vacation. Free, no sign-up.",
       },
       imposteri: {
         tag: "Live · iOS Game",
         text: "A party game with social mechanics and powers. Design, development and App Store launch, all done by me.",
         metric: "Downloads",
+      },
+      jobply: {
+        tag: "New · Web App",
+        quote: "“Applications under control. Mind free.”",
+        text: "Your job application tracker: Jobply follows every application from sending to offer, imports job postings and helps you prepare for interviews with AI.",
       },
       marook: {
         tag: "Live · iOS App",
